@@ -44,31 +44,6 @@ NetSuite (REST API)
 
 ---
 
-## ⚠️ TBA廃止予定についての注意
-
-**NetSuiteはToken-Based Authentication (TBA / OAuth 1.0) を段階的に廃止する方針を公式に示している。**
-
-### 廃止スケジュール
-
-| 時期 | 内容 |
-|------|------|
-| **2026.1リリース（現在）** | 新規インテグレーションには OAuth 2.0 を推奨 |
-| **2027.1リリース** | 新規インテグレーションでのTBA作成が**不可**になる（既存の動作は維持） |
-
-> SuiteCloud SDK については廃止がより早く、**バージョン24.2（2024年8月）以降はOAuth 2.0のみ**をサポートし、TBA（OAuth 1.0）は削除済み。
-
-### 対応方針
-
-- **新規インテグレーション**：OAuth 2.0（Authorization Code Grant）を採用すること
-- **既存のTBA実装**：2027.1までに OAuth 2.0 へ移行することを計画しておくこと（既存は即座に壊れないが、移行が必要）
-
-### 参考リンク
-
-- [NetSuite Help - OAuth 2.0](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_157769826287.html)
-- [Removal of OAuth 1.0 TBA Support in SuiteCloud SDK — NetSuite Community](https://community.oracle.com/netsuite/english/discussion/4503202/removal-of-oauth-1-0-token-based-authentication-support-in-suitecloud-sdk)
-
----
-
 ## 認証：OAuth 1.0a Token-Based Authentication (TBA)
 
 NetSuiteのREST APIはOAuth 1.0aのTBA方式を採用している。ユーザーのログインセッションではなく、**統合レコード（Integration）とアクセストークン**の組み合わせで認証する。
@@ -302,3 +277,28 @@ netsuite-metadata/
 | `環境変数 NS_ACCOUNT_ID が設定されていません` | `.env` が読み込まれていない | スクリプトと同じディレクトリに `.env` があるか確認 |
 | `HTTP 403` | ロールに REST Web Services 権限がない | NetSuiteのロール設定を確認 |
 | `Record 'xxx' not found in index` | メタデータ未取得 | `--select xxx` で先にエクスポートを実行 |
+
+---
+
+## ⚠️ TBA廃止予定についての注意
+
+**NetSuiteはToken-Based Authentication (TBA / OAuth 1.0) を段階的に廃止する方針を公式に示している。**
+
+### 廃止スケジュール
+
+| 時期 | 内容 |
+|------|------|
+| **2026.1リリース（現在）** | 新規インテグレーションには OAuth 2.0 を推奨 |
+| **2027.1リリース** | 新規インテグレーションでのTBA作成が**不可**になる（既存の動作は維持） |
+
+> SuiteCloud SDK については廃止がより早く、**バージョン24.2（2024年8月）以降はOAuth 2.0のみ**をサポートし、TBA（OAuth 1.0）は削除済み。
+
+### 対応方針
+
+- **新規インテグレーション**：OAuth 2.0（Authorization Code Grant）を採用すること
+- **既存のTBA実装**：2027.1までに OAuth 2.0 へ移行することを計画しておくこと（既存は即座に壊れないが、移行が必要）
+
+### 参考リンク
+
+- [NetSuite Help - OAuth 2.0](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_157769826287.html)
+- [Removal of OAuth 1.0 TBA Support in SuiteCloud SDK — NetSuite Community](https://community.oracle.com/netsuite/english/discussion/4503202/removal-of-oauth-1-0-token-based-authentication-support-in-suitecloud-sdk)
