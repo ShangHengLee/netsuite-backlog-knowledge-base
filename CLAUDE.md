@@ -32,10 +32,10 @@ backlogPJ/
 └── development/
     ├── netsuite-rest-metadata.md   # REST APIによるメタデータ取得の解説
     └── scripts/                    # 解説で紹介しているサンプルスクリプト群
+        ├── .env.example                 # 認証情報テンプレート（.envにコピーして使う）
         ├── netsuite_client.py          # OAuth 1.0a 認証の共通モジュール
         ├── export_metadata_from_rest.py # メタデータ取得・エクスポート
         ├── query_metadata.py            # メタデータ検索・SuiteQL生成
-        ├── create_customer.py           # Customerレコード作成サンプル
         └── requirements.txt
 ```
 

@@ -17,7 +17,10 @@
    ```
 
 3. **`.env` を作成**
-   `scripts/.env` を作成し、以下を設定:
+   `.env.example` をコピーして `scripts/.env` を作成し、値を書き換える:
+   ```bash
+   cp scripts/.env.example scripts/.env
+   ```
    ```
    NS_ACCOUNT_ID=1234567_SB1
    NS_CONSUMER_KEY=...
@@ -59,7 +62,8 @@
 ```
 <プロジェクトルート>/
 ├── scripts/                    # このディレクトリ
-│   ├── .env                    # 認証情報（要作成）
+│   ├── .env.example            # 認証情報テンプレート
+│   ├── .env                    # 認証情報（.env.exampleからコピーして作成）
 │   ├── netsuite_client.py      # 共通モジュール
 │   ├── export_metadata_from_rest.py
 │   └── query_metadata.py

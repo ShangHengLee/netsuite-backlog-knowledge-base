@@ -123,9 +123,13 @@ pip3 install -r scripts/requirements.txt
 pip install -r scripts/requirements.txt
 ```
 
-### `.env` ファイルの作成
+### `.env` ファイルの設定
 
-`scripts/.env` を作成し、以下を設定：
+`scripts/.env.example` をコピーして `scripts/.env` を作成し、各値を実際の認証情報に書き換えて使う：
+
+```bash
+cp scripts/.env.example scripts/.env
+```
 
 ```
 NS_ACCOUNT_ID=1234567_SB1
@@ -135,7 +139,13 @@ NS_TOKEN_ID=xxxxx
 NS_TOKEN_SECRET=xxxxx
 ```
 
-**Account IDの形式：**
+**Account IDの確認方法・注意事項：**
+
+`Setup > Company > Company Information` の **Account ID** フィールドに表示されている値をそのままコピーする。
+
+> ⚠️ **大文字・小文字を含め、表示された値と完全に一致させること。**  
+> 例えば `1234567_SB1` と `1234567_sb1` は別物として扱われ、認証エラーになる。
+
 - サンドボックス：`1234567_SB1`（`_SB` + 番号）
 - 本番：`1234567`（数値のみ）
 
@@ -150,6 +160,32 @@ python scripts/export_metadata_from_rest.py --test-auth
 ```
 
 `認証成功` と表示されればOK。
+
+### Postman で動作確認する（推奨）
+
+スクリプトを使う前に **Postman** で接続を確認しておくと、認証情報の問題かコードの問題かを切り分けやすくなる。
+
+1. Postman で新規リクエストを作成
+2. **Authorization** タブ → **OAuth 1.0** を選択
+3. 以下を入力：
+
+   | 項目 | 値 |
+   |------|----|
+   | Consumer Key | `NS_CONSUMER_KEY` の値 |
+   | Consumer Secret | `NS_CONSUMER_SECRET` の値 |
+   | Access Token | `NS_TOKEN_ID` の値 |
+   | Token Secret | `NS_TOKEN_SECRET` の値 |
+   | Signature Method | `HMAC-SHA256` |
+
+4. URL に以下を入力して GET を送信：
+
+   ```
+   https://<ACCOUNT_ID>.suitetalk.api.netsuite.com/services/rest/record/v1/metadata-catalog/
+   ```
+
+   > `<ACCOUNT_ID>` は `.env` の `NS_ACCOUNT_ID` と同じ値（ただし小文字・ハイフン区切りに自動変換される場合あり。NetSuiteのドキュメントで確認すること）
+
+5. `200 OK` が返れば認証成功。`401` の場合は認証情報を見直す。
 
 ---
 
