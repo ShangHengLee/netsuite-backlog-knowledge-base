@@ -1,4 +1,6 @@
 # NetSuite REST API によるメタデータ取得の仕組み
+本文はMDファイルでこちらに保存しています。GitHubで読んだ方が少し見やすいかもしれません。↓
+https://github.com/ShangHengLee/netsuite-backlog-knowledge-base/blob/main/backlogs/netsuite-rest-metadata/netsuite-rest-metadata.md
 
 ## 目次
 
@@ -372,8 +374,3 @@ netsuite-metadata/
 
 - **新規インテグレーション**：OAuth 2.0（Authorization Code Grant）を採用すること
 - **既存のTBA実装**：2027.1までに OAuth 2.0 へ移行することを計画しておくこと（既存は即座に壊れないが、移行が必要）
-
-### 参考リンク
-
-- [NetSuite Help - OAuth 2.0](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_157769826287.html)
-- [Removal of OAuth 1.0 TBA Support in SuiteCloud SDK — NetSuite Community](https://community.oracle.com/netsuite/english/discussion/4503202/removal-of-oauth-1-0-token-based-authentication-support-in-suitecloud-sdk)
