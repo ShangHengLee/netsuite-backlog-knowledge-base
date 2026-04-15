@@ -354,7 +354,7 @@ netsuite-metadata/
 |--------|------|------|
 | `HTTP 401` | 認証情報が間違っている・期限切れ | `.env` の値を確認。アクセストークンを再発行 |
 | `環境変数 NS_ACCOUNT_ID が設定されていません` | `.env` が読み込まれていない | スクリプトと同じディレクトリに `.env` があるか確認 |
-| `HTTP 403` | ロールに REST Web Services 権限がない | NetSuiteのロール設定を確認 |
+| `HTTP 403` | ロールに REST Web Services 権限がない | NetSuiteのロール設定を確認、足りない権限を追加 |
 | `Record 'xxx' not found in index` | メタデータ未取得 | `--select xxx` で先にエクスポートを実行 |
 
 ---
