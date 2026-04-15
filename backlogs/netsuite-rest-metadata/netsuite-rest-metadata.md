@@ -22,6 +22,7 @@ https://github.com/ShangHengLee/netsuite-backlog-knowledge-base/blob/main/backlo
 ## 対象読者と前提知識
 
 | ロール | 活用シーン |
+|--------|-----------|
 | 開発者 | スクリプトを実行してメタデータをローカル保存し、開発・クエリ作成に活用 |
 | コンサル | フィールド定義・構造の参照や、開発者への依頼時の仕様確認 |
 
@@ -95,6 +96,7 @@ NetSuiteのREST APIはOAuth 1.0aのTBA方式を採用している。ユーザー
 ### 4つの認証情報
 
 | 項目 | 説明 | 取得場所 |
+|------|------|----------|
 | Consumer Key | 統合レコードを識別するID | Setup > Integration > Manage Integrations |
 | Consumer Secret | 統合レコードのシークレット | 同上（作成時のみ表示） |
 | Token ID | アクセストークンのID | Setup > Users/Roles > Access Tokens |
@@ -192,6 +194,7 @@ python scripts/export_metadata_from_rest.py --test-auth
 3. 以下を入力：
 
    | 項目 | 値 |
+   |------|----|
    | Consumer Key | `NS_CONSUMER_KEY` の値 |
    | Consumer Secret | `NS_CONSUMER_SECRET` の値 |
    | Access Token | `NS_TOKEN_ID` の値 |
@@ -329,6 +332,7 @@ netsuite-metadata/
 ## 対応レコードタイプ（SuiteQLマッピング済み）
 
 | REST record type | SuiteQL テーブル | type フィルタ |
+|-----------------|-----------------|--------------|
 | salesorder | transaction | SalesOrd |
 | invoice | transaction | CustInvc |
 | purchaseorder | transaction | PurchOrd |
@@ -348,6 +352,7 @@ netsuite-metadata/
 ## よくあるエラー
 
 | エラー | 原因 | 対処 |
+|--------|------|------|
 | `HTTP 401` | 認証情報が間違っている・期限切れ | `.env` の値を確認。アクセストークンを再発行 |
 | `環境変数 NS_ACCOUNT_ID が設定されていません` | `.env` が読み込まれていない | スクリプトと同じディレクトリに `.env` があるか確認 |
 | `HTTP 403` | ロールに REST Web Services 権限がない | NetSuiteのロール設定を確認、足りない権限を追加 |
@@ -362,6 +367,7 @@ netsuite-metadata/
 ### 廃止スケジュール
 
 | 時期 | 内容 |
+|------|------|
 | **2026.1リリース（現在）** | 新規インテグレーションには OAuth 2.0 を推奨 |
 | **2027.1リリース** | 新規インテグレーションでのTBA作成が**不可**になる（既存の動作は維持） |
 
