@@ -104,10 +104,6 @@ NetSuiteのREST APIはOAuth 1.0aのTBA方式を採用している。ユーザー
 
 > **注意:** Consumer SecretとToken Secretは作成直後しか表示されない。必ずメモしておくこと。
 
-### 署名方式
-
-`HMAC-SHA256` を使用。リクエストごとにタイムスタンプとnonceが生成され、署名が計算される（`requests-oauthlib` ライブラリが処理する）。
-
 ---
 
 ## NetSuiteでの事前設定
