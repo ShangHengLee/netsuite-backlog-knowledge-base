@@ -134,6 +134,9 @@ NetSuiteのREST APIはOAuth 1.0aのTBA方式を採用している。ユーザー
 
 ## ローカル環境のセットアップ
 
+### scriptフォルダ丸ごとをダウンロードし、ご自身の作業のルートフォルダ直下に移動してください。
+https://github.com/ShangHengLee/netsuite-backlog-knowledge-base/tree/main/backlogs/netsuite-rest-metadata/scripts
+
 ### 依存パッケージのインストール
 
 ```bash
