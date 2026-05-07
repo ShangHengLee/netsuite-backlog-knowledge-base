@@ -30,14 +30,18 @@ NetSuiteに関する社内ナレッジベース（Backlog）を蓄積・整理�
 ```
 backlogPJ/
 └── backlogs/
-    └── netsuite-rest-metadata/         # 記事フォルダ（記事名 = フォルダ名）
-        ├── netsuite-rest-metadata.md   # REST APIによるメタデータ取得の解説
-        └── scripts/                    # 解説で紹介しているサンプルスクリプト群
-            ├── .env.example                 # 認証情報テンプレート（.envにコピーして使う）
-            ├── netsuite_client.py           # OAuth 1.0a 認証の共通モジュール
-            ├── export_metadata_from_rest.py # メタデータ取得・エクスポート
-            ├── query_metadata.py            # メタデータ検索・SuiteQL生成
-            └── requirements.txt
+    ├── netsuite-rest-metadata/              # 記事フォルダ（記事名 = フォルダ名）
+    │   ├── netsuite-rest-metadata.md        # REST APIによるメタデータ取得の解説
+    │   └── scripts/                         # 解説で紹介しているサンプルスクリプト群
+    │       ├── .env.example                 # 認証情報テンプレート（.envにコピーして使う）
+    │       ├── netsuite_client.py           # OAuth 1.0a 認証の共通モジュール
+    │       ├── export_metadata_from_rest.py # メタデータ取得・エクスポート
+    │       ├── query_metadata.py            # メタデータ検索・SuiteQL生成
+    │       └── requirements.txt
+    └── csv-import-migration-form/           # CSVインポートによるデータ移行の考え方
+        ├── csv-import-migration-form.md     # 移行専用フォーム作成〜SDF deploy〜CSVインポートの解説
+        └── skills/
+            └── customform-migration-for-csv.md  # AIスキル：移行用フォーム作成手順
 ```
 
 ## scripts/ の実行方法
