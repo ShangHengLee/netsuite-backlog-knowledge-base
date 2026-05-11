@@ -92,18 +92,7 @@ Cursor は VS Code ベースだが SuiteCloud Extension に対応していない
 **NetSuite への直接クエリはできない**
 「利用可能なカスタムレコード一覧を教えて」のような質問に対し、Cline が Suitelet を作成してデプロイしようとする場合がある。環境に関する調査系の質問は避け、具体的な開発タスクを投げること。
 
-**再有効化時は API Key が再発行される**
-Developer Assistant: Enable をオフ→オンにすると API Key と Base URL が新しく発行される。Cline 側の設定も更新が必要。
-
-**`--validate` と通常デプロイの違い**
-
-```bash
-suitecloud project:deploy --validate  # バリデーションのみ（環境変更なし）
-suitecloud project:deploy             # 実際に SB へデプロイ
 ```
-
-SDF デプロイは追加・上書きのみ。既存オブジェクトの削除は起きない。
-
 ---
 
 ## 参考
