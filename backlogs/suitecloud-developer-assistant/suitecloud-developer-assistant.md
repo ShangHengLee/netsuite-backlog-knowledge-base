@@ -29,6 +29,8 @@ suitecloud account:manageauth --list
 
 VS Code の設定（`Ctrl+,`）を開き、**Workspace > Extensions > SuiteCloud** に移動する。
 
+<img width="1725" height="833" alt="image" src="https://github.com/user-attachments/assets/02130d4e-541a-46c5-8acf-41c2e5edfcd8" />
+
 | 項目 | 設定値 |
 |------|--------|
 | Developer Assistant: Auth ID | 使用する Auth ID（例：`jkc_sb`） |
@@ -40,6 +42,8 @@ VS Code の設定（`Ctrl+,`）を開き、**Workspace > Extensions > SuiteCloud
 ### 2. Cline の設定
 
 Cline 拡張機能の設定 → **Edit in settings** を開き、以下を入力する。
+
+<img width="297" height="777" alt="image" src="https://github.com/user-attachments/assets/ee30bb2f-0d26-4bf1-9609-96e2efc64243" />
 
 | 項目 | 設定値 |
 |------|--------|
