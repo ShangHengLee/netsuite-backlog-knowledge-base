@@ -37,6 +37,7 @@ https://support.claude.com/ja/articles/12650343-excel%E3%81%A7claude%E3%82%92%E4
 ## 2. 基本的な使い方
 
 右上のClaudeボタンを押すと、Excel画面の右側にClaudeのサイドパネルが表示されます。  
+![alt text](image.png)
 通常のClaudeと同じようにテキストを入力して使えますが、Excelでは便利なショートカットスキルも用意されています。
 
 一般的な使い方で例えば、「きれいなラインリストにしたい」と入力すると、
