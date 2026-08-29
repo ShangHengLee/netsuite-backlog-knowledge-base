@@ -38,10 +38,12 @@ backlogPJ/
     │       ├── export_metadata_from_rest.py # メタデータ取得・エクスポート
     │       ├── query_metadata.py            # メタデータ検索・SuiteQL生成
     │       └── requirements.txt
-    └── csv-import-migration-form/           # CSVインポートによるデータ移行の考え方
-        ├── csv-import-migration-form.md     # 移行専用フォーム作成〜SDF deploy〜CSVインポートの解説
-        └── skills/
-            └── customform-migration-for-csv.md  # AIスキル：移行用フォーム作成手順
+    ├── csv-import-migration-form/           # CSVインポートによるデータ移行の考え方
+    │   ├── csv-import-migration-form.md     # 移行専用フォーム作成〜SDF deploy〜CSVインポートの解説
+    │   └── skills/
+    │       └── customform-migration-for-csv.md  # AIスキル：移行用フォーム作成手順
+    └── role-customrecord-entry-permission/  # 保存検索に必要なロール権限とカスタムレコードのアクセス・タイプ設定
+        └── role-customrecord-entry-permission.md
 ```
 
 ## scripts/ の実行方法
