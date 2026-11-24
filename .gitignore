@@ -1,2 +1,4 @@
 .env
 memory/
+.DS_Store
+.vscode/
