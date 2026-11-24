@@ -1,0 +1,38 @@
+* NetSuite SDFで「配送」のCSVインポート設定を移行できない
+
+#contents
+
+** 概要
+
+''配送（Item Fulfillment）のCSVインポート設定（保存済みインポート）は、SDFでもUIの「アカウントにコピー」でも移行できない。''
+
+配送のCSVインポートは最近リリースされた機能（NetSuite 2025.1）で、どちらの移行手段もまだ対応していないため。設定ミスや権限の問題ではなく、NetSuite側の制限である。
+
+対象読者：SDFで環境間（SB → 本番など）の移行を担当する開発者・コンサル
+
+** 同時期にCSVインポート対応された種別
+
+|レコード種別|対応時期|備考|h
+|配送（Item Fulfillment）|2025.1|サブリスト（パッケージ詳細・在庫詳細・アイテム）も対象|
+|入荷（Item Receipt）|2025.1||
+|出荷アイテム（Shipping Items）|不明|同ブログに記載|
+|ビン移動（Bin Transfer）|不明|同ブログに記載|
+
+- 入荷など配送以外の種別がSDFで移行できるかは''未確認''。同時期の機能なので同様に未対応の可能性があるが、移行時に実際に試すこと。
+- 出典：[[Concentrus Blog>https://blog.concentrus.com/csv-import-new-record-types-now-available-for-import]]（第三者ブログ。Oracle公式リリースノートは未確認）
+
+** 対処方法
+
+移行先で''手動で再作成''する。
+
++ 移行元の設定（インポート種別、追加／更新などのオプション、フィールドマッピング、名前）を画面キャプチャで控える
++ 移行先で同じ内容のCSVインポートを新規作成する
++ 同じCSVサンプルで試験インポートし、結果が一致することを確認する
+
+移行計画では、この設定を「SDF対象外の手作業」として一覧に明記し、工数と担当を確保しておく。
+
+** 関連ドキュメント
+
+- [[Concentrus Blog: CSV Import New Record Types Now Available for Import>https://blog.concentrus.com/csv-import-new-record-types-now-available-for-import]]
+- [[Oracle: CSV Import>https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3949069.html]]
+- [[Oracle: Item Fulfillment Import>https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_0220095644.html]]
