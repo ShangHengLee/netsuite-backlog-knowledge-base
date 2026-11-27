@@ -42,8 +42,11 @@ backlogPJ/
     │   ├── csv-import-migration-form.md     # 移行専用フォーム作成〜SDF deploy〜CSVインポートの解説
     │   └── skills/
     │       └── customform-migration-for-csv.md  # AIスキル：移行用フォーム作成手順
-    └── role-customrecord-entry-permission/  # 保存検索に必要なロール権限とカスタムレコードのアクセス・タイプ設定
-        └── role-customrecord-entry-permission.md
+    ├── role-customrecord-entry-permission/  # 保存検索に必要なロール権限とカスタムレコードのアクセス・タイプ設定
+    │   └── role-customrecord-entry-permission.md
+    └── sdf-account-specific-value/          # SDF移行で標準レコード参照が [ACCOUNT_SPECIFIC_VALUE] になる問題と回避策
+        ├── sdf-account-specific-value.md          # Markdown版
+        └── sdf-account-specific-value.backlog.txt # Backlog記法版（Backlogにそのまま貼り付け可）
 ```
 
 ## scripts/ の実行方法
